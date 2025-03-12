@@ -45,8 +45,6 @@ def main():
                 border-radius: 8px;
                 font-weight: 500;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                display: grid; /* 내부 요소에도 grid 적용 */
-                place-items: center; /* 내부 요소 중앙 정렬 */
             }
             </style>
             """,
