@@ -50,8 +50,8 @@ def main():
             unsafe_allow_html=True,
         )
 
-        # 테이블 형태로 결과 표시
-        st.dataframe(df, hide_index=True)
+        # 테이블 형태로 결과 표시 (열 이름 숨김)
+        st.dataframe(df.style.hide(axis="columns"))
 
 if __name__ == "__main__":
     main()
