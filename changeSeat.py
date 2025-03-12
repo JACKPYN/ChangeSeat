@@ -33,14 +33,10 @@ def main():
             """
             <style>
             .seat-table {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .seat-row {
-                display: flex;
-                justify-content: center;
-                margin-bottom: 10px;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 10px;
+                padding: 20px;
             }
             .seat-item {
                 background-color: #f0f2f6;
@@ -50,7 +46,6 @@ def main():
                 font-weight: 500;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 margin: 5px;
-                width: 80px;
             }
             </style>
             """,
@@ -60,10 +55,8 @@ def main():
         # 테이블 형태의 자리 배치 결과 출력
         st.markdown("<div class='seat-table'>", unsafe_allow_html=True)
         for row in seat_table:
-            st.markdown("<div class='seat-row'>", unsafe_allow_html=True)
             for student in row:
                 st.markdown(f"<div class='seat-item'>{student}</div>", unsafe_allow_html=True)
-            st.markdown("</div>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
