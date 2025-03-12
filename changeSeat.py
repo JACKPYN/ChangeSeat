@@ -1,6 +1,7 @@
 import streamlit as st
 import random
 import time
+import pandas as pd
 
 def randomize_seats(num_students=24, rows=4, cols=6):
     """학생들의 자리를 무작위로 재배치하고 테이블 형태로 반환하는 함수"""
@@ -28,9 +29,11 @@ def main():
         seat_table = randomize_seats()
         st.write("## 자리 배치 결과")
 
-        # 결과 표시 (테이블 형식)
-        for row in seat_table:
-            st.write(row)
+        # pandas DataFrame으로 변환
+        df = pd.DataFrame(seat_table)
+
+        # 테이블 형태로 결과 표시
+        st.table(df)
 
 if __name__ == "__main__":
     main()
