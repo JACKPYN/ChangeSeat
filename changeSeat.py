@@ -32,8 +32,26 @@ def main():
         # pandas DataFrame으로 변환
         df = pd.DataFrame(seat_table)
 
+        # 스타일 적용을 위한 CSS
+        st.markdown(
+            """
+            <style>
+            .dataframe td {
+                text-align: center; /* 가운데 정렬 */
+            }
+            .dataframe th {
+                display: none; /* 행/열 이름 숨김 */
+            }
+            .dataframe td:nth-child(3), .dataframe td:nth-child(5) {
+                border-left: 2px solid lightgray; /* 간격 띄우기 */
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+
         # 테이블 형태로 결과 표시
-        st.table(df)
+        st.dataframe(df, hide_index=True)
 
 if __name__ == "__main__":
     main()
