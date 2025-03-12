@@ -45,12 +45,8 @@ def main():
                 border-radius: 8px;
                 font-weight: 500;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                margin: 5px;
-                width: 80px;  /* 각 항목의 너비를 고정 */
-                height: 50px; /* 각 항목의 높이를 고정 */
-                display: flex; /* flexbox를 사용하여 내부 요소를 가운데 정렬 */
-                align-items: center; /* 수직 가운데 정렬 */
-                justify-content: center; /* 수평 가운데 정렬 */
+                display: grid; /* 내부 요소에도 grid 적용 */
+                place-items: center; /* 내부 요소 중앙 정렬 */
             }
             </style>
             """,
